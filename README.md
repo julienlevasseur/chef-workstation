@@ -2,12 +2,12 @@
 
 Install and configure workstation.
 
-#Supports
+# Supports
 
 - Debian like distributions
 - 
 
-#Usage
+# Usage
 
 Make your wrapper cookbook dependant of this one:
 
@@ -37,8 +37,7 @@ Edit the `attributes.json` file:
 	"workstation": {
         "packages": [
             "vim",
-            "git",
-            ...
+            "git"
         ],
         "gems": [
             "bundler",
