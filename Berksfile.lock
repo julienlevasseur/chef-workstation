@@ -1,0 +1,35 @@
+DEPENDENCIES
+  consul-template
+    git: https://github.com/julienlevasseur/chef-consul-template.git
+    revision: 1c4530be4fa49146a6294179d44442434a37bf4b
+  ssh
+    git: https://github.com/julienlevasseur/chef-ssh.git
+    revision: 267b360578f9c53c7ed930f30a52c7bd274966e9
+  workstation
+    path: .
+    metadata: true
+
+GRAPH
+  compat_resource (12.19.0)
+  consul-template (0.13.0)
+    golang (>= 0.0.0)
+    libarchive (>= 0.0.0)
+    nssm (>= 0.0.0)
+    runit (>= 0.0.0)
+  golang (1.7.0)
+  libarchive (1.0.0)
+  nssm (4.0.0)
+    windows (>= 0.0.0)
+  ohai (5.2.0)
+  packagecloud (0.3.0)
+  runit (4.0.4)
+    packagecloud (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  ssh (0.10.22)
+  windows (3.4.1)
+    ohai (>= 4.0.0)
+  workstation (0.1.0)
+    consul-template (>= 0.0.0)
+    ssh (>= 0.0.0)
+  yum-epel (2.1.2)
+    compat_resource (>= 12.16.3)
