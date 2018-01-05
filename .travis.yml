@@ -1,0 +1,21 @@
+language: ruby
+
+jobs:
+  include:
+    - stage: lint
+      rvm:
+        - 2.1
+        - 2.2
+        - 2.3
+        - 2.4
+      
+      
+      sudo: required
+      
+      bundler_args: --without development --retry=3 --jobs=3
+      
+      before_install:
+        - gem update --system
+        - gem update bundler
+        - gem install cookstyle
+      script: "cookstyle"
