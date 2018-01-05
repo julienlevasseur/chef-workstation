@@ -1,5 +1,7 @@
 # workstation
 
+[![Build Status](http://img.shields.io/travis/julienlevasseur/chef-workstation.svg)][travis]
+
 Install and configure workstation.
 
 # Supports
