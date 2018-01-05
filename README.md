@@ -1,6 +1,6 @@
 # workstation
 
-[![Build Status](http://img.shields.io/travis/julienlevasseur/chef-workstation.svg)][travis]
+![Build Status](https://travis-ci.org/julienlevasseur/chef-workstation.svg?branch=master)
 
 Install and configure workstation.
 
