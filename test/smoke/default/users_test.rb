@@ -7,7 +7,7 @@ require 'json'
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
 
-node = json("/home/levasju1/repos/bitbucket/chef-solo_playground/nodes/LAP-MTL-LEVASJU.vasco.com.json").params
+node = json('/home/levasju1/repos/bitbucket/chef-solo_playground/nodes/LAP-MTL-LEVASJU.vasco.com.json').params
 
 node['normal']['workstation']['users'].each do |user|
   describe file("#{user['home']}/.ssh/id_rsa") do
