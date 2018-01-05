@@ -18,5 +18,4 @@ node['workstation']['users'].each do |user|
     group user['name']
     mode '0644'
   end
-
 end

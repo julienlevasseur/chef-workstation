@@ -16,9 +16,7 @@ cron 'chef-solo-run' do
 end
 
 # Install packages :
-if node['platform_family'] == 'debian'
-  apt_update
-end
+apt_update if node['platform_family'] == 'debian'
 
 node['workstation']['packages'].each do |pkg|
   package pkg
@@ -32,7 +30,7 @@ node['workstation']['gems'].each do |g|
 end
 
 node['workstation']['pip'].each do |package, version|
-  pip_package "#{package}" do
+  pip_package package do
     version version
   end
 end

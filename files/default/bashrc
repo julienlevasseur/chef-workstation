@@ -144,7 +144,7 @@ fi
 # Vault :
 if [ -d "/opt/vault" ]; then
   export PATH=$PATH:/opt/vault
-  VAULT_ADDR='http://127.0.0.1:8200'
+  export VAULT_ADDR='http://127.0.0.1:8200'
 fi
 
 # Minikube :
