@@ -16,7 +16,4 @@ before_install:
   - gem update bundler
   - gem install cookstyle
 
-jobs:
-  include:
-    - stage: lint
-      script: "cookstyle"
+script: "cookstyle"
