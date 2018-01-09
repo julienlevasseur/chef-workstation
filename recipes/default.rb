@@ -47,7 +47,7 @@ end
 
 include_recipe 'workstation::users'
 include_recipe 'workstation::ubuntu' if node['platform'] == 'ubuntu'
-include_recipe 'consul-template::default'
+# include_recipe 'consul-template::default'
 
 node['workstation']['ssh_config'].each do |ssh_config|
   ssh_config ssh_config['name'] do
