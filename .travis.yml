@@ -16,4 +16,6 @@ before_install:
   - gem update bundler
   - gem install cookstyle
 
-script: "cookstyle"
+script: 
+  - cookstyle
+  - foodcritic .

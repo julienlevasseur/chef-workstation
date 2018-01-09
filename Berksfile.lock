@@ -1,10 +1,11 @@
 DEPENDENCIES
   consul-template
     git: https://github.com/julienlevasseur/chef-consul-template.git
-    revision: 1c4530be4fa49146a6294179d44442434a37bf4b
+    revision: 1ed65d4796edc19e50ba1f0dcf3f1e1f730bc41c
   ssh
     git: https://github.com/julienlevasseur/chef-ssh.git
-    revision: 267b360578f9c53c7ed930f30a52c7bd274966e9
+    revision: df9c9a20c6caa9835f7a13a55f11a06f8446842c
+    ref: df9c9a2
   workstation
     path: .
     metadata: true
@@ -25,8 +26,8 @@ GRAPH
   runit (4.0.4)
     packagecloud (>= 0.0.0)
     yum-epel (>= 0.0.0)
-  ssh (0.10.22)
-  windows (3.4.1)
+  ssh (0.10.24)
+  windows (3.4.3)
     ohai (>= 4.0.0)
   workstation (0.1.0)
     consul-template (>= 0.0.0)

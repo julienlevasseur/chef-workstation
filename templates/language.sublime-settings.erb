@@ -1,0 +1,6 @@
+// These settings override both User and Default settings for the <% @language %> syntax
+{
+<% @options.each do |k,v| %>
+	"<%= k %>": <%= v %>,
+<% end %>
+}

@@ -1,0 +1,42 @@
+---
+driver:
+#  name: vagrant
+  name: docker
+  #binary: docker.io
+  use_sudo: false
+  # Need: 
+  #   - chef gem install --no-user-install kitchen-docker
+  #   - usermod -aG docker levasju1
+
+provisioner:
+  name: chef_zero
+  # You may wish to disable always updating cookbooks in CI or other testing environments.
+  # For example:
+  #   always_update_cookbooks: <%= !ENV['CI'] %>
+  always_update_cookbooks: true
+
+verifier:
+  name: inspec
+
+platforms:
+#  - name: ubuntu-16.04
+  - name: ubuntu
+#  - name: centos-7
+
+suites:
+  - name: default
+    run_list:
+      - recipe[workstation::default]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
+    attributes:
+      workstation:
+        ssh_config:
+          - name: jumpboxdev
+            options:
+              HostName: 54.81.79.111
+              User: esljenkins
+              IdentityFile: "~/.ssh/esljenkins"
+            user: root
+

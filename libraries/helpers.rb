@@ -11,7 +11,9 @@
 module Workstation
   module Helpers
     def pip_package_installed?(package_name)
-      return true if system "pip list --format=columns|grep #{package_name}"
+      cmd = Mixlib::ShellOut.new("pip list --format=columns|grep #{package_name}")
+      # return true if system "pip list --format=columns|grep #{package_name}"
+      return true if cmd.run_command
     end
   end
 end
