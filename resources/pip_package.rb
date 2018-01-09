@@ -1,5 +1,5 @@
 # To learn more about Custom Resources, see https://docs.chef.io/custom_resources.html
-resource_pkg_name :pip_package
+resource_name :pip_package
 provides :pip_package
 
 property :pkg_name, String, name_property: true
