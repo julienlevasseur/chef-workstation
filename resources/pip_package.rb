@@ -2,7 +2,7 @@
 resource_pkg_name :pip_package
 provides :pip_package
 
-property :pkg_name, String, pkg_name_property: true
+property :pkg_name, String, name_property: true
 property :version, String
 
 default_action :install
