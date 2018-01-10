@@ -4,6 +4,16 @@
 
 Install and configure workstation.
 
+# Table of Contents
+
+**[workstation](#workstation)**
+
+**[Supports](#supports)**
+
+**[Usage](#usage)**
+
+* [Chef-Solo setup](#chef-solo-setup)
+
 # Supports
 
 - Debian like distributions
