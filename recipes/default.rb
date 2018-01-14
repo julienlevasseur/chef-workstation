@@ -10,7 +10,7 @@
 
 cron 'chef-solo-run' do
   hour '*'
-  minute '*/15'
+  minute '*/30'
   command 'cd /opt/chef-solo/ && /opt/chef-solo/run.sh > /var/log/chef-solo.log'
   only_if { ::Dir.exist?('/opt/chef-solo') }
 end
