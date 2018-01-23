@@ -5,6 +5,7 @@ default['workstation']['users'] = []
 default['workstation']['packages'] = %w(
   vim
   git
+  npm
 )
 
 # gem packages
