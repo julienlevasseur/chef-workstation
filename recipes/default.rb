@@ -30,12 +30,12 @@ end
 #     interval: node['workstation']['chef-solo']['daemon-run-interval']
 #   )
 # end
-# 
+#
 # # Link the Chef-Solo service file from /lib to /etc :
 # link '/lib/systemd/system/chef-solo.service' do
 #   to '/etc/systemd/system/multi-user.target.wants/chef-solo.service'
 # end
-# 
+#
 # # Enable and start Chef-Solo daemon :
 # service 'chef-solo' do
 #   action [:enable, :start]
