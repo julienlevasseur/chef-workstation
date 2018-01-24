@@ -41,7 +41,7 @@ end
 #   action [:enable, :start]
 # end
 
-if node['platform'] == 'Linux'
+if node['platform'] == 'ubuntu' || node['platform'] == 'debian'
   include_recipe 'workstation::debian' if node['platform_family'] == 'debian'
 elsif node['platform'] == 'Darwin'
   include_recipe 'workstation::macos'
