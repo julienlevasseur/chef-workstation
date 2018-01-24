@@ -10,12 +10,4 @@ node['workstation']['users'].each do |user|
     path "#{user['home']}/.ssh"
     not_if { ::File.exist?("#{user['home']}/.ssh/id_rsa") }
   end
-
-  # ~/.bashrc :
-  cookbook_file "#{user['home']}/.bashrc" do
-    source 'bashrc'
-    owner user['name']
-    group user['name']
-    mode '0644'
-  end
 end
