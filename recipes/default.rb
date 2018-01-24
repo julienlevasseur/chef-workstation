@@ -41,9 +41,13 @@ end
 #   action [:enable, :start]
 # end
 
-# Install packages :
-apt_update if node['platform_family'] == 'debian'
+if node['platform'] == 'Linux'
+  include_recipe 'workstation::debian' if node['platform_family'] == 'debian'
+elsif node['platform'] == 'Darwin'
+  include_recipe 'workstation::macos'
+end
 
+# Install packages :
 node['workstation']['packages'].each do |pkg|
   package pkg
 end
@@ -80,7 +84,6 @@ template '/etc/hosts' do
 end
 
 include_recipe 'workstation::users'
-include_recipe 'workstation::ubuntu' if node['platform'] == 'ubuntu'
 include_recipe 'workstation::git' if node['workstation']['customize_git'] == true
 # include_recipe 'consul-template::default'
 
