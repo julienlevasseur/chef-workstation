@@ -21,6 +21,7 @@ source_url 'https://github.com/julienlevasseur/workstation'
 
 depends 'consul-template'
 depends 'ssh'
+depends 'git'
 
 supports 'debian'
 supports 'ubuntu'
