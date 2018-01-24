@@ -70,6 +70,7 @@ directory '/opt/scripts'
 node['workstation']['scripts'].each do |script|
   remote_file script['destination'] do
     source script['source']
+    mode '0755'
   end
 end
 
