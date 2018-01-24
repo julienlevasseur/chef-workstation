@@ -61,6 +61,8 @@ node['workstation']['pip'].each do |package, version|
   end
 end
 
+directory '/opt/scripts'
+
 node['workstation']['scripts'].each do |script|
   remote_file script['destination'] do
     source script['source']
