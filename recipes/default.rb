@@ -98,4 +98,4 @@ node['workstation']['ssh_config'].each do |ssh_config|
   end
 end
 
-node.save if node['virtualization']['system'] == 'docker'
+node.save if node['virtualization']['system'] == 'docker' # ~FC075

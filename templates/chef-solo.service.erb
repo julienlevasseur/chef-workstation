@@ -1,0 +1,14 @@
+[Unit]
+Description=Chef-Solo
+Requires=network-online.target
+After=network-online.target
+
+
+[Service]
+ExecStart=/usr/local/bin/chef-solo -d -i <% @interval %>
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStop=/bin/kill -HUP $MAINPID
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
