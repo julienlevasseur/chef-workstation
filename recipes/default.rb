@@ -33,8 +33,8 @@ template '/lib/systemd/system/chef-solo.service' do
 end
 
 # Link the Chef-Solo service file from /lib to /etc :
-link '/lib/systemd/system/chef-solo.service' do
-  to '/etc/systemd/system/multi-user.target.wants/chef-solo.service'
+link '/etc/systemd/system/multi-user.target.wants/chef-solo.service' do
+  to '/lib/systemd/system/chef-solo.service'
   not_if { node['virtualization']['system'] == 'docker' }
 end
 
