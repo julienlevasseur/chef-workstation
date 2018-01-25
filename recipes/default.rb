@@ -27,7 +27,7 @@ template '/lib/systemd/system/chef-solo.service' do
   group 'root'
   mode '0644'
   variables(
-    interval: node['workstation']['chef-solo']['daemon-run-interval']
+    :interval => node['workstation']['chef-solo']['daemon-run-interval']
   )
   not_if { node['virtualization']['system'] == 'docker' }
 end
