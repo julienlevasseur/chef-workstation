@@ -10,39 +10,40 @@
 
 # add note about /opt/chef-solo
 
-# cron 'chef-solo-run' do
-#   hour '*'
-#   minute '*/30'
-#   command 'cd /opt/chef-solo/ && /opt/chef-solo/run.sh > /var/log/chef-solo.log'
-#   only_if { ::Dir.exist?('/opt/chef-solo') }
-# end
+cron 'chef-solo-run' do
+  hour '*'
+  minute '*/30'
+  command 'cd /opt/chef-solo/ && /opt/chef-solo/run.sh > /var/log/chef-solo.log'
+  only_if { ::Dir.exist?('/opt/chef-solo') }
+end
 
 #
 # Manage Chef-Solo daemon :
 #
 # Create the chef-solo service file :
-template '/lib/systemd/system/chef-solo.service' do
-  source 'chef-solo.service.erb'
-  owner 'root'
-  group 'root'
-  mode '0644'
-  variables(
-    :interval => node['workstation']['chef-solo']['daemon-run-interval']
-  )
-  not_if { node['virtualization']['system'] == 'docker' }
-end
-
-# Link the Chef-Solo service file from /lib to /etc :
-link '/etc/systemd/system/multi-user.target.wants/chef-solo.service' do
-  to '/lib/systemd/system/chef-solo.service'
-  not_if { node['virtualization']['system'] == 'docker' }
-end
-
-# Enable and start Chef-Solo daemon :
-service 'chef-solo' do
-  action [:enable, :start]
-  not_if { node['virtualization']['system'] == 'docker' }
-end
+# template '/lib/systemd/system/chef-solo.service' do
+#   source 'chef-solo.service.erb'
+#   owner 'root'
+#   group 'root'
+#   mode '0644'
+#   variables(
+#     :interval => node['workstation']['chef-solo']['daemon-run-interval']
+#   )
+#   notifies :restart, 'service[chef-solo]', :immediately
+#   not_if { node['virtualization']['system'] == 'docker' }
+# end
+# 
+# # Link the Chef-Solo service file from /lib to /etc :
+# link '/etc/systemd/system/multi-user.target.wants/chef-solo.service' do
+#   to '/lib/systemd/system/chef-solo.service'
+#   not_if { node['virtualization']['system'] == 'docker' }
+# end
+# 
+# # Enable and start Chef-Solo daemon :
+# service 'chef-solo' do
+#   action [:enable, :start]
+#   not_if { node['virtualization']['system'] == 'docker' }
+# end
 
 if node['platform'] == 'ubuntu' || node['platform'] == 'debian'
   include_recipe 'workstation::debian' if node['platform_family'] == 'debian'
