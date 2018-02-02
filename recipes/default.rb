@@ -32,13 +32,13 @@ end
 #   notifies :restart, 'service[chef-solo]', :immediately
 #   not_if { node['virtualization']['system'] == 'docker' }
 # end
-# 
+#
 # # Link the Chef-Solo service file from /lib to /etc :
 # link '/etc/systemd/system/multi-user.target.wants/chef-solo.service' do
 #   to '/lib/systemd/system/chef-solo.service'
 #   not_if { node['virtualization']['system'] == 'docker' }
 # end
-# 
+#
 # # Enable and start Chef-Solo daemon :
 # service 'chef-solo' do
 #   action [:enable, :start]

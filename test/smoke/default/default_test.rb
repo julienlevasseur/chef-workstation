@@ -7,7 +7,9 @@ require 'json'
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
 
-node = json('/home/levasju1/repos/bitbucket/chef-solo_playground/nodes/LAP-MTL-LEVASJU.vasco.com.json').params
+nodefile = '/home/levasju1/repos/bitbucket/chef-solo_playground/nodes/LAP-MTL-LEVASJU.vasco.com.json'
+
+node = json(nodefile).params if File.exist?(nodefile) || json('/tmp/kitchen/nodes/default-debian-8.json').params
 
 # describe crontab('root') do
 #  its('commands') { should include 'cd /opt/chef-solo' }
@@ -41,14 +43,12 @@ describe file('/etc/hosts') do
   its('group') { should eq 'root' }
 end
 
-describe file('/opt/display_manager.py') do
-  it { should exist }
-  it { should be_file }
-  its('mode') { should cmp '0755' }
-  it { should be_executable }
-  its('owner') { should eq 'root' }
-  its('group') { should eq 'root' }
-  its('md5sum') { should eq '9012f87573a4e1cd14d5b528aae9f201' }
+node['normal']['workstation']['scripts'].each do |script|
+  describe file(script) do
+    it { should exist }
+    it { should be_file }
+    its('mode') { should cmp '0755' }
+  end
 end
 
 # node['normal']['workstation']['ssh_config'].each do |ssh_config|
