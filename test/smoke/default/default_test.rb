@@ -54,16 +54,6 @@ node['normal']['workstation']['scripts'].each do |script|
   end
 end
 
-# describe file('/opt/display_manager.py') do
-#   it { should exist }
-#   it { should be_file }
-#   its('mode') { should cmp '0755' }
-#   it { should be_executable }
-#   its('owner') { should eq 'root' }
-#   its('group') { should eq 'root' }
-#   its('md5sum') { should eq '9012f87573a4e1cd14d5b528aae9f201' }
-# end
-
 # node['normal']['workstation']['ssh_config'].each do |ssh_config|
 #   describe ssh_config("/home/#{ssh_config['user']}/.ssh/config") do
 #     # its('owner') { should match(ssh_config['user']) }
