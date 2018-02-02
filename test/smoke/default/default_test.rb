@@ -8,11 +8,8 @@ require 'json'
 # found at http://inspec.io/docs/reference/resources/
 
 nodefile = '/home/levasju1/repos/bitbucket/chef-solo_playground/nodes/LAP-MTL-LEVASJU.vasco.com.json'
-if File.file?(nodefile) == true
-  node = json(nodefile).params
-else
-  node = json('/tmp/kitchen/nodes/default-debian-8.json').params
-end
+
+node = json(nodefile).params if File.exist?(nodefile) || json('/tmp/kitchen/nodes/default-debian-8.json').params
 
 # describe crontab('root') do
 #  its('commands') { should include 'cd /opt/chef-solo' }
