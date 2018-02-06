@@ -10,7 +10,7 @@
 
 # add note about /opt/chef-solo
 node['workstation']['cron']['jobs'].each do |cronjob|
-  cron cronjob['name'].to_s do
+  cron cronjob['name'] do # ~FC022
     hour cronjob['hour']
     minute cronjob['minute']
     command cronjob['command']
