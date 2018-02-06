@@ -7,6 +7,8 @@ driver:
   # Need: 
   #   - chef gem install --no-user-install kitchen-docker
   #   - usermod -aG docker levasju1
+#driver_config:
+#  provision_command: apt-get install -f upstart
 
 provisioner:
   name: chef_zero
@@ -19,8 +21,8 @@ verifier:
   name: inspec
 
 platforms:
-#  - name: ubuntu-16.04
-  - name: ubuntu
+  - name: ubuntu-16.04
+  - name: debian-8
 #  - name: centos-7
 
 suites:
@@ -39,4 +41,3 @@ suites:
               User: esljenkins
               IdentityFile: "~/.ssh/esljenkins"
             user: root
-

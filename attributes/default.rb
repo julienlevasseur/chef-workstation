@@ -3,6 +3,16 @@ default['workstation']['chef-solo']['daemon-run-interval'] = 1800
 # Users to configure:
 default['workstation']['users'] = []
 
+default['workstation']['cron']['jobs'] = [
+  {
+    name: 'chef-solo-run',
+    hour: '*',
+    minute: '*/30',
+    command: 'cd /opt/chef-solo/ && /opt/chef-solo/run.sh > /var/log/chef-solo.log',
+    only_if: ::Dir.exist?('/opt/chef-solo'),
+  },
+]
+
 # system packages
 default['workstation']['packages'] = %w(
   vim
