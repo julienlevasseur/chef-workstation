@@ -9,12 +9,14 @@
 # Vault (binary + service)
 
 # add note about /opt/chef-solo
-
-cron 'chef-solo-run' do
-  hour '*'
-  minute '*/30'
-  command 'cd /opt/chef-solo/ && /opt/chef-solo/run.sh > /var/log/chef-solo.log'
-  only_if { ::Dir.exist?('/opt/chef-solo') }
+node['workstation']['cron']['jobs'].each do |cronjob|
+  cron cronjob['name'] do # ~FC022
+    hour cronjob['hour']
+    minute cronjob['minute']
+    command cronjob['command']
+    only_if { cronjob['only_if'] } if cronjob['only_if']
+    not_if { node['virtualization']['system'] == 'docker' }
+  end
 end
 
 #
