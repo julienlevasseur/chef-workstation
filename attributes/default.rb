@@ -34,6 +34,8 @@ default['workstation']['pip'] = {
 
 default['workstation']['scripts'] = []
 
+default['workstation']['symlinks'] = []
+
 # /etc/hosts
 default['workstation']['hosts'] = []
 

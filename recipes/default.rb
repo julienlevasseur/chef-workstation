@@ -80,6 +80,12 @@ node['workstation']['scripts'].each do |script|
   end
 end
 
+node['wotkstation']['symlinks'].each do |link|
+  link link['from'] do
+    to link['to']
+  end
+end
+
 template '/etc/hosts' do
   source 'hosts.erb'
   owner 'root'
