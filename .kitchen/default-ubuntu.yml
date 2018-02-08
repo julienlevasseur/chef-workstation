@@ -2,8 +2,8 @@
 username: kitchen
 ssh_key: "/home/levasju1/repos/github/chef-workstation/.kitchen/docker_id_rsa"
 image_id: 48cdae6734f9
-container_id: deab7117b5b89c4881df078830c83f6c0b4a28411d837630975ae009a66f7367
+container_id: 6677aee40b3ab62182f2042994c267508abf089410ec7c43d4e2e9c79dce366b
 hostname: localhost
-port: 32768
+port: 32771
 last_action: create
 last_error: Kitchen::ActionFailed

@@ -80,7 +80,7 @@ node['workstation']['scripts'].each do |script|
   end
 end
 
-node['wotkstation']['symlinks'].each do |link|
+node['workstation']['symlinks'].each do |link|
   link link['from'] do
     to link['to']
   end
