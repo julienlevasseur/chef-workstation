@@ -74,7 +74,7 @@ end
 node['workstation']['services'].each do |service|
   actions = []
   service['action'].each do |action|
-    actions.push(action.parameterize.underscore.to_sym)
+    actions.push(action.to_sym)
   end
   service service['name'] do
     action actions
