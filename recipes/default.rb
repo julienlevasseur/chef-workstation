@@ -71,6 +71,12 @@ node['workstation']['pip'].each do |package, version|
   end
 end
 
+node['workstation']['services'].each do |service|
+  service service['name'] do
+    action service['action']
+  end
+end
+
 directory '/opt/scripts'
 
 node['workstation']['scripts'].each do |script|
