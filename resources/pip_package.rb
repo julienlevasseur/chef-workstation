@@ -1,4 +1,3 @@
-lines (19 sloc) 751 Bytes
 # To learn more about Custom Resources, see https://docs.chef.io/custom_resources.html
 resource_name :pip_package
 provides :pip_package
