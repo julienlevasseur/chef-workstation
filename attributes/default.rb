@@ -13,6 +13,8 @@ default['workstation']['cron']['jobs'] = [
   },
 ]
 
+default['workstation']['debian']['repos'] = []
+
 # system packages
 default['workstation']['packages'] = %w(
   vim
@@ -31,6 +33,12 @@ default['workstation']['pip'] = {
   'ansible' => '2.3.2.0',
   'pyOpenSSL' => '17.5.0',
 }
+
+default['workstation']['services'] = []
+# {
+#   name: 'foo',
+#   action: [:enabled, :started]
+#  }
 
 default['workstation']['scripts'] = []
 
