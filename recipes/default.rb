@@ -72,8 +72,12 @@ node['workstation']['pip'].each do |package, version|
 end
 
 node['workstation']['services'].each do |service|
+  actions = []
+  service['action'].each do |action|
+    actions.push(action.parameterize.underscore.to_sym)
+  end
   service service['name'] do
-    action service['action']
+    action actions
   end
 end
 
