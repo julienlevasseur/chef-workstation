@@ -29,11 +29,26 @@ suites:
   - name: default
     run_list:
       - recipe[workstation::default]
-    verifier:
-      inspec_tests:
-        - test/smoke/default
+#    verifier:
+#      inspec_tests:
+#        - test/smoke/default
     attributes:
       workstation:
+        packages:
+          - git
+        gems:
+          - bundler
+        scripts:
+          - {
+            "destination": "/usr/local/bin/goss",
+            "source": "https://github.com/aelsabbahy/goss/releases/download/v0.3.5/goss-linux-amd64",
+            "mode": "0755"
+          }
+        users:
+          - {
+            "name": "root",
+            "home": "/root"
+          }
         ssh_config:
           - name: jumpboxdev
             options:
