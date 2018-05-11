@@ -7,7 +7,7 @@ default['workstation']['cron']['jobs'] = [
   {
     name: 'chef-solo-run',
     hour: '*',
-    minute: '*/30',
+    minute: '0',
     command: 'cd /opt/chef-solo/ && /opt/chef-solo/run.sh > /var/log/chef-solo.log',
     only_if: ::Dir.exist?('/opt/chef-solo'),
   },
