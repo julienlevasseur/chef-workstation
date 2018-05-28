@@ -65,11 +65,11 @@ node['workstation']['gems'].each do |g|
   end
 end
 
-#node['workstation']['pip'].each do |package, version|
-#  pip_package package do
-#    version version
-#  end
-#end
+# node['workstation']['pip'].each do |package, version|
+#   pip_package package do
+#     version version
+#   end
+# end
 
 node['workstation']['services'].each do |service|
   actions = []
