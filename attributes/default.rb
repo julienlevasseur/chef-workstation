@@ -77,7 +77,7 @@ default['workstation']['terminal'] = {
   miscbordersdefault: 'TRUE',
   misccursorblinks: 'FALSE',
   misccursorshape: 'TERMINAL_CURSOR_SHAPE_BLOCK',
-  miscdefaultgeometry: '136x70',
+  miscdefaultgeometry: '136x69',
   miscinheritgeometry: 'FALSE',
   miscmenubardefault: 'TRUE',
   miscmouseautohide: 'FALSE',
