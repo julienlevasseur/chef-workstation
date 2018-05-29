@@ -26,6 +26,12 @@ node['workstation']['packages'].each do |pkg|
   package pkg
 end
 
+node['workstation']['packages_to_remove'].each do |pkg|
+  package pkg do
+    action :remove
+  end
+end
+
 node['workstation']['gems'].each do |g|
   gem_package g do
     action :install
@@ -96,5 +102,7 @@ execute 'vim_setup' do
   cwd '/opt/Config-files'
   command '/opt/Config-files/setup-vim.sh'
 end
+
+include_recipe 'workstation::terminal'
 
 node.save if node['virtualization']['system'] == 'docker' # ~FC075
