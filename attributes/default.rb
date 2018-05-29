@@ -72,6 +72,82 @@ default['workstation']['git']['config'] = [
 
 default['workstation']['terminal']['config'] = [
   {
+    key: 'FontName',
+    value: 'DejaVu Sans Mono 9',
+  },
+  {
+    key: 'MiscAlwaysShowTabs',
+    value: 'FALSE',
+  },
+  {
+    key: 'MiscBell',
+    value: 'FALSE',
+  },
+  {
+    key: 'MiscBordersDefault',
+    value: 'TRUE',
+  },
+  {
+    key: 'MiscCursorBlinks',
+    value: 'FALSE',
+  },
+  {
+    key: 'MiscCursorShape',
+    value: 'TERMINAL_CURSOR_SHAPE_BLOCK',
+  },
+  {
+    key: 'MiscDefaultGeometry',
+    value: '136x69',
+  },
+  {
+    key: 'MiscInheritGeometry',
+    value: 'FALSE',
+  },
+  {
+    key: 'MiscMenubarDefault',
+    value: 'TRUE',
+  },
+  {
+    key: 'MiscMouseAutohide',
+    value: 'FALSE',
+  },
+  {
+    key: 'MiscToolbarDefault',
+    value: 'FALSE',
+  },
+  {
+    key: 'MiscConfirmClose',
+    value: 'TRUE',
+  },
+  {
+    key: 'MiscCycleTabs',
+    value: 'TRUE',
+  },
+  {
+    key: 'MiscTabCloseButtons',
+    value: 'TRUE',
+  },
+  {
+    key: 'MiscTabCloseMiddleClick',
+    value: 'TRUE',
+  },
+  {
+    key: 'MiscTabPosition',
+    value: 'GTK_POS_TOP',
+  },
+  {
+    key: 'MiscHighlightUrls',
+    value: 'TRUE',
+  },
+  {
+    key: 'MiscScrollAlternateScreen',
+    value: 'TRUE',
+  },
+  {
+    key: 'ScrollingLines',
+    value: '500000',
+  },
+  {
     key: 'ColorBackground',
     value: '#080C13',
   },
