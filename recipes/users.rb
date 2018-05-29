@@ -13,16 +13,16 @@ node['workstation']['users'].each do |user|
 
   # Terminal customization:
   directory "#{user['home']}/.config/xfce4/terminal" do
-    owner "#{user['name']}"
-    group "#{user['name']}"
+    owner user['name']
+    group user['name']
     mode 0755
     action :create
   end
 
   template "#{user['home']}/.config/xfce4/terminal/terminalrc" do
     source 'terminalrc.erb'
-    owner "#{user['name']}"
-    group "#{user['name']}"
+    owner user['name']
+    group user['name']
     mode 0644
     variables(
       fontname:                   node['workstation']['terminal']['fontname'],
