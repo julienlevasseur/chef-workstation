@@ -50,9 +50,10 @@ node['workstation']['users'].each do |user|
   end
 
   # Give access to docker to user:
-  execute "Give access to Docker to #{user}['name']" do
-    command 'USERID=`id -u`;usermod -a -G docker $USERID'
-    not_if "grep docker /etc/group|grep #{user}['name']"
-    not_if { node['virtualization']['system'] == 'docker' }
-  end
+  # TODO : Refactor with group resource !
+  #execute "Give access to Docker to #{user}['name']" do
+  #  command 'USERID=`id -u`;usermod -a -G docker $USERID'
+  #  not_if "grep docker /etc/group|grep #{user}['name']"
+  #  not_if { node['virtualization']['system'] == 'docker' }
+  #end
 end
