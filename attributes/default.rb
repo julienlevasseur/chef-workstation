@@ -70,24 +70,13 @@ default['workstation']['git']['config'] = [
   },
 ]
 
-default['workstation']['terminal']['fontname']                  = 'DejaVu Sans Mono 9'
-default['workstation']['terminal']['miscalwaysshowtabs']        = 'FALSE'
-default['workstation']['terminal']['miscbell']                  = 'FALSE'
-default['workstation']['terminal']['miscbordersdefault']        = 'TRUE'
-default['workstation']['terminal']['misccursorblinks']          = 'FALSE'
-default['workstation']['terminal']['misccursorshape']           = 'TERMINAL_CURSOR_SHAPE_BLOCK'
-default['workstation']['terminal']['miscdefaultgeometry']       = '136x69'
-default['workstation']['terminal']['miscinheritgeometry']       = 'FALSE'
-default['workstation']['terminal']['miscmenubardefault']        = 'TRUE'
-default['workstation']['terminal']['miscmouseautohide']         = 'FALSE'
-default['workstation']['terminal']['misctoolbardefault']        = 'FALSE'
-default['workstation']['terminal']['miscconfirmclose']          = 'TRUE'
-default['workstation']['terminal']['misccycletabs']             = 'TRUE'
-default['workstation']['terminal']['misctabclosebuttons']       = 'TRUE'
-default['workstation']['terminal']['misctabclosemiddleclick']   = 'TRUE'
-default['workstation']['terminal']['misctabposition']           = 'GTK_POS_TOP'
-default['workstation']['terminal']['mischighlighturls']         = 'TRUE'
-default['workstation']['terminal']['miscscrollalternatescreen'] = 'TRUE'
-default['workstation']['terminal']['scrollinglines']            = '500000'
-default['workstation']['terminal']['colorbackground']           = '#080C13'
-default['workstation']['terminal']['colorforeground']           = '#EFEFEF'
+default['workstation']['terminal']['config'] = [
+  {
+    key: 'ColorBackground',
+    value: '#080C13',
+  },
+  {
+    key: 'ColorForeground',
+    value: '#EFEFEF',
+  },
+]
