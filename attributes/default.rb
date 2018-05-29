@@ -22,6 +22,8 @@ default['workstation']['packages'] = %w(
   npm
 )
 
+default['workstation']['packages_to_remove'] = []
+
 # gem packages
 default['workstation']['gems'] = %w(
   bundler
@@ -67,3 +69,27 @@ default['workstation']['git']['config'] = [
     value: 'true',
   },
 ]
+
+default['workstation']['terminal'] = {
+  fontname: 'DejaVu Sans Mono 9',
+  miscalwaysshowtabs: 'FALSE',
+  miscbell: 'FALSE',
+  miscbordersdefault: 'TRUE',
+  misccursorblinks: 'FALSE',
+  misccursorshape: 'TERMINAL_CURSOR_SHAPE_BLOCK',
+  miscdefaultgeometry: '136x70',
+  miscinheritgeometry: 'FALSE',
+  miscmenubardefault: 'TRUE',
+  miscmouseautohide: 'FALSE',
+  misctoolbardefault: 'FALSE',
+  miscconfirmclose: 'TRUE',
+  misccycletabs: 'TRUE',
+  misctabclosebuttons: 'TRUE',
+  misctabclosemiddleclick: 'TRUE',
+  misctabposition: 'GTK_POS_TOP',
+  mischighlighturls: 'TRUE',
+  miscscrollalternatescreen: 'TRUE',
+  scrollinglines: '500000',
+  colorbackground: '#080C13',
+  colorforeground: '#EFEFEF',
+}
