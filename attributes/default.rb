@@ -156,3 +156,5 @@ default['workstation']['terminal']['config'] = [
     value: '#EFEFEF',
   },
 ]
+
+default['workstation']['touchpad'] = :disabled

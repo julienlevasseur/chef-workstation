@@ -104,3 +104,12 @@ execute 'vim_setup' do
 end
 
 node.save if node['virtualization']['system'] == 'docker' # ~FC075
+
+# Disable Touchpad:
+if node['workstation']['touchpad'] == :disabled
+  execute 'disable_touchpad' do
+    command 'synclient TouchpadOff=1'
+    only_if { File.exist?('/usr/bin/synclient') }
+    only_if 'synclient|grep TouchpadOff|grep 0'
+  end
+end
